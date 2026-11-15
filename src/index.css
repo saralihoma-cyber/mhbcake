@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bodoni Moda", "Didot", "Bodoni MT", "Times New Roman", serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
+
+  --color-ivory: #fdfaf4;
+  --color-cream: #f8f1e5;
+  --color-beige: #ede2cf;
+  --color-sand: #d9c8a9;
+  --color-champagne: #e6d0a0;
+  --color-gold: #b88d3e;
+  --color-gold-deep: #86621f;
+  --color-gold-light: #f2e2b8;
+  --color-rose: #efd4cf;
+  --color-rose-soft: #fbf0ec;
+  --color-rose-deep: #a9706b;
+  --color-ink: #33271b;
+  --color-ink-soft: #6b5b49;
+  --color-line: #e7dbc3;
+  --color-success: #4a7557;
+  --color-danger: #a23f37;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--color-ink);
+  background-color: var(--color-ivory);
+  background-image:
+    radial-gradient(900px 520px at 100% -10%, rgba(239, 212, 207, 0.45), transparent 60%),
+    radial-gradient(800px 480px at -10% 30%, rgba(230, 208, 160, 0.22), transparent 62%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* ---------- Or métallique ---------- */
+.text-foil {
+  background: linear-gradient(100deg, #86621f 0%, #b88d3e 22%, #e3c98a 46%, #b88d3e 68%, #7c5a1b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-foil {
+  background: linear-gradient(115deg, #a47a2e 0%, #d3b06a 24%, #f6e8bf 50%, #d3b06a 76%, #a47a2e 100%);
+}
+
+.btn-gold,
+.btn-outline,
+.btn-ink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 3.25rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-position 0.7s ease, transform 0.25s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-gold {
+  color: #2c1f10;
+  background: linear-gradient(115deg, #a47a2e 0%, #d3b06a 22%, #f6e8bf 48%, #d3b06a 74%, #a47a2e 100%);
+  background-size: 220% 100%;
+  background-position: 18% 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 14px 28px -14px rgba(134, 98, 31, 0.7);
+}
+
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background-position: 82% 0;
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 20px 34px -16px rgba(134, 98, 31, 0.8);
+}
+
+.btn-outline {
+  color: var(--color-gold-deep);
+  border: 1px solid var(--color-gold);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--color-gold-light);
+  color: var(--color-ink);
+}
+
+.btn-ink {
+  color: var(--color-ivory);
+  background-color: var(--color-ink);
+}
+
+.btn-ink:hover:not(:disabled) {
+  background-color: #4a3a29;
+}
+
+.btn-gold:disabled,
+.btn-outline:disabled,
+.btn-ink:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  min-height: 2.6rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+}
+
+/* ---------- Champs ---------- */
+.field {
+  display: block;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.95rem;
+  font-size: 1rem;
+  color: var(--color-ink);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--color-line);
+  border-radius: 2px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: #a89a86;
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(184, 141, 62, 0.18);
+}
+
+.field[aria-invalid="true"] {
+  border-color: var(--color-danger);
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Livre ---------- */
+.book {
+  position: relative;
+  display: block;
+  border-radius: 3px 7px 7px 3px;
+  transform: perspective(1600px) rotateY(-15deg) rotateX(1.5deg);
+  transform-origin: 30% 50%;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.8s ease;
+  box-shadow:
+    3px 2px 0 #fbf5ea,
+    5px 3px 0 #e2d4bb,
+    7px 5px 0 #fbf5ea,
+    26px 34px 46px -22px rgba(92, 62, 20, 0.55);
+}
+
+.book img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.book::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(60, 40, 10, 0.3) 0%, rgba(255, 255, 255, 0.4) 2.2%, rgba(60, 40, 10, 0.14) 4.5%, transparent 9%, transparent 92%, rgba(255, 255, 255, 0.14) 100%);
+}
+
+.book-hover:hover .book,
+.book:hover {
+  transform: perspective(1600px) rotateY(-5deg) rotateX(0deg) translateY(-4px);
+}
+
+.book.book-flat {
+  transform: none;
+  box-shadow: 0 14px 24px -14px rgba(92, 62, 20, 0.5);
+  border-radius: 2px 4px 4px 2px;
+}
+
+/* ---------- Divers ---------- */
+.arch {
+  border-radius: 999px 999px 4px 4px;
+}
+
+.hairline {
+  background-image: linear-gradient(90deg, transparent, var(--color-gold) 20%, var(--color-gold) 80%, transparent);
+  height: 1px;
+}
+
+.skeleton {
+  background: linear-gradient(100deg, #f3eadb 30%, #fbf6ec 50%, #f3eadb 70%);
+  background-size: 220% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: 3px;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -220% 0;
+  }
+}
+
+.prose-mhb p + p {
+  margin-top: 1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .book,
+  .btn-gold {
+    transition: none;
+  }
+  .skeleton {
+    animation: none;
+  }
+}
+
+/* Réserve la place de la barre d'achat fixe (fiches produit, mobile et tablette) */
+@media (max-width: 1023px) {
+  body.has-buybar {
+    padding-bottom: 5rem;
+  }
+}
