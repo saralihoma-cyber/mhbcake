@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
     has_file: false,
     file_size: null,
     best_seller: false,
-    payhip_url: "https://payhip.com/b/iV4qv"
+    payhip_url: "https://payhip.com/buy?s=1&cart_links%5B%5D=iV4qv&qty%5BiV4qv%5D=1"
   },
   {
     id: 2,
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     has_file: false,
     file_size: null,
     best_seller: false,
-    payhip_url: "https://payhip.com/b/G2aB0"
+    payhip_url: "https://payhip.com/buy?s=1&cart_links%5B%5D=G2aB0&qty%5BG2aB0%5D=1"
   },
   {
     id: 3,
@@ -108,7 +108,7 @@ export const PRODUCTS: Product[] = [
     has_file: false,
     file_size: null,
     best_seller: false,
-    payhip_url: "https://payhip.com/b/a6KBN"
+    payhip_url: "https://payhip.com/buy?s=1&cart_links%5B%5D=a6KBN&qty%5Ba6KBN%5D=1"
   }
 ];
 
