@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /commande/
-Disallow: /commander
+
+Sitemap: https://mhbcake-83.vercel.app/sitemap.xml
